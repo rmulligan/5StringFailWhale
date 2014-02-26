@@ -3,8 +3,10 @@ ruby '2.0.0'
 
 gem 'rails', '3.2.17'
 gem 'mongoid'
-gem 'tweetstream'
 gem 'haml-rails'
+gem "eventmachine"
+gem "mongoid_spacial"
+gem "em-http-request"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'mongoid-rspec'
@@ -27,6 +29,7 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'rspec-nc'
   gem 'debugger'
+  gem 'fabrication'
 end
 
 gem 'jquery-rails'
