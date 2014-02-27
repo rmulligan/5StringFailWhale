@@ -457,7 +457,7 @@ function addResults(json) {
 	    }
 
 	    html.push('<div class="tweet"><span class="thumb">');
-	    html.push('<a href="http://twitter.com/' + from + '">');
+	    html.push('<a href="http://twitter.com/' + from + '" target="_blank">');
 	    html.push('<img src="' + profileImageUrl + '"/></a></span>');
 	    html.push('<div class="body"<a href="http://twitter.com/' + from);
 	    html.push('"></a>');
