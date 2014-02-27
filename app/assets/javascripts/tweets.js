@@ -465,7 +465,6 @@ function addResults(json) {
 	    html.push('</div><div class="body location">From: ' + from);
 	    html.push(',' + tweet.content);
 	    html.push('</div></div>');
-	    $("#paging_container").pajinate();
 	}
     } else {
 	html.push('<div class="no-tweets">No tweets found.</div>');
@@ -473,6 +472,8 @@ function addResults(json) {
 
     $(results).html(html.join(''));
     $('#results-wrapper').show();
+    $("#paging_container").pajinate({items_per_page: 5});
+
 }
 
 google.maps.event.addDomListener(window, 'load', init);

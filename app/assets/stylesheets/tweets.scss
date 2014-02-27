@@ -118,3 +118,16 @@ body {
     text-decoration: none;
     color: #59b;
 }
+.page_navigation , .alt_page_navigation{
+    padding-bottom: 10px;
+}
+
+.page_navigation a {
+    padding:3px 5px;
+    margin:2px;
+    color:white;
+    text-decoration:none;
+    font-family: Tahoma;
+    font-size: 12px;
+    background-color:#DB5C04;
+}
