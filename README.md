@@ -1,6 +1,6 @@
 Location Based Twitter Public Stream Viewer
-[View on Heroku](http://secret-refuge-1214.herokuapp.com/)
 =========
+[View on Heroku](http://secret-refuge-1214.herokuapp.com/)
 
 By utilizing the Twitter Streaming API,
 create a Rails 3 App that show tweets from a location specified by the user.
