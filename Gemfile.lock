@@ -30,7 +30,9 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     arel (3.0.3)
+    atomic (1.1.14)
     awesome_print (1.2.0)
+    buftok (0.2.0)
     builder (3.0.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -49,6 +51,7 @@ GEM
     coffee-script-source (1.7.0)
     columnize (0.3.6)
     cookiejar (0.3.1)
+    daemons (1.1.9)
     debugger (1.6.5)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -64,10 +67,18 @@ GEM
       http_parser.rb (>= 0.6.0)
     em-socksify (0.3.0)
       eventmachine (>= 1.0.0.beta.4)
+    em-twitter (0.3.3)
+      buftok (~> 0.2)
+      eventmachine (~> 1.0)
+      http_parser.rb (~> 0.6)
+      simple_oauth (~> 0.2)
+    equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
     fabrication (2.9.8)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
     formatador (0.2.4)
     guard (2.5.1)
@@ -91,6 +102,8 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
+    http (0.5.0)
+      http_parser.rb
     http_parser.rb (0.6.0)
     i18n (0.6.9)
     journey (1.0.4)
@@ -111,6 +124,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memoizable (0.4.0)
+      thread_safe (~> 0.1.3)
     method_source (0.8.2)
     mime-types (1.25.1)
     mongoid (3.1.6)
@@ -122,11 +137,10 @@ GEM
       mongoid (~> 3.1.6)
       rake
       rspec (>= 2.14)
-    mongoid_spacial (0.2.16)
-      activesupport (~> 3.0)
-      mongoid (>= 2.3.0)
     moped (1.5.2)
     multi_json (1.8.4)
+    multipart-post (2.0.0)
+    naught (1.0.0)
     nio4r (1.0.0)
     origin (1.1.0)
     polyglot (0.3.4)
@@ -188,6 +202,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simple_oauth (0.2.0)
     slop (3.4.7)
     spork (0.9.2)
     sprockets (2.2.2)
@@ -197,11 +212,30 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     terminal-notifier (1.4.2)
     thor (0.18.1)
+    thread_safe (0.1.3)
+      atomic
     tilt (1.4.1)
     timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    tweetstream (2.6.1)
+      daemons (~> 1.1)
+      em-http-request (>= 1.1.1)
+      em-twitter (~> 0.3)
+      multi_json (~> 1.3)
+      twitter (~> 5.5)
+    twitter (5.7.1)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.5.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (0.3.38)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
@@ -214,7 +248,6 @@ DEPENDENCIES
   awesome_print
   coffee-rails (~> 3.2.1)
   debugger
-  em-http-request
   eventmachine
   fabrication
   guard-rspec
@@ -225,10 +258,10 @@ DEPENDENCIES
   jquery-ui-rails
   mongoid
   mongoid-rspec
-  mongoid_spacial
   rack-mini-profiler
   rails (= 3.2.17)
   rspec-nc
   rspec-rails
   sass-rails (~> 3.2.3)
+  tweetstream
   uglifier (>= 1.0.3)
