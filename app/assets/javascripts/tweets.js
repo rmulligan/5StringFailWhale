@@ -428,8 +428,8 @@ function addResults(json) {
     html = [];
     if (json && json.length) {
 	for (var i = 0, tweet; tweet = json[i]; i++) {
-	    var from = "Test";
-	    var profileImageUrl = "https://pbs.twimg.com/profile_images/3437050884/bf8b2f6ee4a62af9600965dfbf28f801_normal.jpeg";
+	    var from = tweet.username;
+	    var profileImageUrl = tweet.image_url;
 	    var loc = tweet.loc;
 
 	    // Check if the location matches a latlng
@@ -463,7 +463,7 @@ function addResults(json) {
 	    html.push('"></a>');
 	    html.push(tweet.text);
 	    html.push('</div><div class="body location">From: ' + from);
-	    html.push(', near ' + loc);
+	    html.push(',' + tweet.content);
 	    html.push('</div></div>');
 	}
     } else {

@@ -28,8 +28,10 @@ class TweetPersistMachine
             Tweet.create!({
                             :loc => [latitude, tweet.geo.longitude],
                             :tags => tags,
-                            :content => tweet.text
-                      })
+                            :content => tweet.text,
+                            :username => tweet.user.username,
+                            :image_url => tweet.user.profile_image_url
+                          })
           end
         end
 
