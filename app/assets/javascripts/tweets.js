@@ -401,7 +401,7 @@ function search(e) {
     var d = distanceWidget.get('distance') * 0.621371;
     var p = distanceWidget.get('position');
 
-    var url = '/tweet-search?tag=' + escape(q) + '&latitude=' + p.lat() + '&longitude=' + p.lng() + '&radius=' + d;
+    var url = '/tweet-search?tags=' + escape(q) + '&latitude=' + p.lat() + '&longitude=' + p.lng() + '&radius=' + d;
 
     clearMarkers();
 
@@ -465,6 +465,7 @@ function addResults(json) {
 	    html.push('</div><div class="body location">From: ' + from);
 	    html.push(',' + tweet.content);
 	    html.push('</div></div>');
+	    $("#paging_container").pajinate();
 	}
     } else {
 	html.push('<div class="no-tweets">No tweets found.</div>');
