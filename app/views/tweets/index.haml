@@ -1,1 +1,22 @@
+#search
+  %form{ action: "", method: "", id: "s" }
+    %div
+      %label
+        Search twitter for
+      %input{ type: "search", value: "#google", id: "q" }
+      %label
+        within
+        %span{ id: "dist" }
+        miles
+        %span{ id: "of" }
+      %input{ type: "submit", value: "Search!", id: "btn" }
+
+#cols
+  #map-wrapper
+    #map
+
+  #results-wrapper
+    %a{ href: "#", id: "close" }
+      x
+    #results
 

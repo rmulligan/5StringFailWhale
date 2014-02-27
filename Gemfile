@@ -25,7 +25,7 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'guard-rspec'
   gem 'guard-spork'
-  gem 'rack-mini-profiler'
+#  gem 'rack-mini-profiler'
   gem 'rspec-nc'
   gem 'debugger'
   gem 'fabrication'
