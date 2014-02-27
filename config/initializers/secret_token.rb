@@ -1,0 +1,1 @@
+FiveStringFailWhale::Application.config.secret_token = '98d40f53e69b1b379682792b636f015939ed745a1d7acbb7a0ddb930438152eb6016a3e06c9714536e424e987ea2c655ebe0a936f9e7dd307b6cd282c0221807'
