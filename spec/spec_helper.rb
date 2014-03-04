@@ -2,6 +2,9 @@ require 'rubygems'
 require 'spork'
 require 'rails/mongoid'
 require "mongoid-rspec"
+require 'capybara/rspec'
+require 'capybara/rspec'
+
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -30,6 +33,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
   config.include Mongoid::Matchers
+  config.include Capybara::DSL
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of

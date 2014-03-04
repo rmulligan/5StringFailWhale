@@ -28,7 +28,11 @@ group :development, :test do
 #  gem 'rack-mini-profiler'
   gem 'rspec-nc'
   gem 'debugger'
-#  gem 'fabrication'
+  gem 'fabrication'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 gem 'jquery-rails'

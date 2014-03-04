@@ -16,6 +16,7 @@ class TweetPersistMachine
       end
 
       @client.locations(-180,-90,180,90) do |tweet|
+
         # New fiber for db insertion
         fiber = Fiber.new do
           tags = Array.new
@@ -23,21 +24,20 @@ class TweetPersistMachine
             tweet.hashtags.map{|tag| tags << tag.text}
           end
 
-          latitude = tweet.geo.latitude
-          if latitude.is_a?(Float) && tweet.hashtags?
-            Tweet.create!({
-                            :loc => [latitude, tweet.geo.longitude],
+          if tweet.geo.latitude.is_a?(Float)
+            t = Tweet.new({
+                            :loc => [tweet.geo.latitude, tweet.geo.longitude],
                             :tags => tags,
                             :content => tweet.text,
                             :username => tweet.user.username,
                             :image_url => tweet.user.profile_image_url
                           })
+            count = count + 1 if t.save
           end
         end
 
         EM.next_tick do
           fiber.resume
-          count = Tweet.all.count
         end
       end
     end
